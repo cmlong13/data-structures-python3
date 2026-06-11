@@ -33,13 +33,13 @@ class LinkedList:
     """
     def __init__(self):
         self.head = None
-        self.size = 0
+        self._size = 0
     
     def is_empty(self):
-        return self.size == 0
+        return self._size == 0
 
     def size(self):
-        return self.size
+        return self._size
     
     def append(self, value):
         new_node = Node(value)
@@ -50,16 +50,16 @@ class LinkedList:
             while current.next:
                 current = current.next
             current.next = new_node
-        self.size += 1
+        self._size += 1
 
     def prepend(self, value):
         new_node = Node(value)
         new_node.next = self.head
         self.head = new_node
-        self.size += 1
+        self._size += 1
 
     def insert(self, index, value):
-        if index < 0 or index > self.size:
+        if index < 0 or index > self._size:
             raise IndexError("Index out of bounds")
         
         new_node = Node(value)
@@ -74,10 +74,10 @@ class LinkedList:
             new_node.next = current.next
             current.next = new_node
         
-        self.size += 1
+        self._size += 1
 
     def get(self, index):
-        if index < 0 or index >= self.size:
+        if index < 0 or index >= self._size:
             raise IndexError("Index out of bounds")
         
         current = self.head
@@ -96,7 +96,7 @@ class LinkedList:
         raise ValueError("Value not found in the list")
     
     def set(self, index, value):
-        if index < 0 or index >= self.size:
+        if index < 0 or index >= self._size:
             raise IndexError("Index out of bounds")
         
         current = self.head
@@ -105,7 +105,7 @@ class LinkedList:
         current.value = value
 
     def remove_at(self, index):
-        if index < 0 or index >= self.size:
+        if index < 0 or index >= self._size:
             raise IndexError("Index out of bounds")
         
         if index == 0:
@@ -116,7 +116,7 @@ class LinkedList:
                 current = current.next
             current.next = current.next.next
         
-        self.size -= 1
+        self._size -= 1
 
     def remove(self, value):
         current = self.head
@@ -128,7 +128,7 @@ class LinkedList:
                     self.head = current.next
                 else:
                     previous.next = current.next
-                self.size -= 1
+                self._size -= 1
                 return
             previous = current
             current = current.next
@@ -136,7 +136,7 @@ class LinkedList:
     
     def clear(self):
         self.head = None
-        self.size = 0
+        self._size = 0
     
     def __str__(self):
         values = []
@@ -153,4 +153,3 @@ class LinkedList:
             values.append(current.value)
             current = current.next
         return values
-    
