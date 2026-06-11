@@ -16,6 +16,7 @@ class Stack:
 
     def is_empty(self):
         return len(self.stack) == 0
+    
     def push(self, item):
         self.stack.append(item)
 
