@@ -15,7 +15,7 @@ This stack is implemented in Python using a list as the internal storage.
 File location:
 
 ```text
-src/stack/stack.py
+src/Stack/Stack.py
 ```
 
 ---
@@ -36,7 +36,7 @@ src/stack/stack.py
 ## Example
 
 ```python
-from src.stack.stack import Stack
+from src.Stack.Stack import Stack
 
 stack = Stack()
 
@@ -67,11 +67,11 @@ Stacks are used in:
 Tests are located in:
 
 ```text
-tests/test_stack.py
+tests/TestsStack.py
 ```
 
 Run tests with:
 
 ```bash
-pytest
+python tests/TestsStack.py
 ```

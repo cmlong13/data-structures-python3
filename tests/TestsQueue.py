@@ -19,16 +19,16 @@ SRC_DIR = ROOT_DIR / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-QUEUE_PATH = SRC_DIR / "queue" / "queue.py"
+QUEUE_PATH = SRC_DIR / "Queue" / "Queue.py"
 QUEUE_SPEC = importlib.util.spec_from_file_location("queue_module", QUEUE_PATH)
 QUEUE_MODULE = importlib.util.module_from_spec(QUEUE_SPEC)
 QUEUE_SPEC.loader.exec_module(QUEUE_MODULE)
-queue = QUEUE_MODULE.queue
+Queue = QUEUE_MODULE.Queue
 
 
 class TestQueue(unittest.TestCase):
     def setUp(self):
-        self.queue = queue()
+        self.queue = Queue()
 
     def test_new_queue_is_empty(self):
         self.assertTrue(self.queue.is_empty())

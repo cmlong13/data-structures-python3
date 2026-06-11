@@ -15,7 +15,7 @@ This queue is implemented in Python using a list as the internal storage.
 File location:
 
 ```text
-src/queue/queue.py
+src/Queue/Queue.py
 ```
 
 ---
@@ -36,9 +36,9 @@ src/queue/queue.py
 ## Example
 
 ```python
-from src.queue.queue import queue
+from src.Queue.Queue import Queue
 
-queue = queue()
+queue = Queue()
 
 queue.enqueue(10)
 queue.enqueue(20)
@@ -67,11 +67,11 @@ Queues are used in:
 Tests are located in:
 
 ```text
-tests/tests-queue.py
+tests/TestsQueue.py
 ```
 
 Run tests with:
 
 ```bash
-python tests/tests-queue.py
+python tests/TestsQueue.py
 ```

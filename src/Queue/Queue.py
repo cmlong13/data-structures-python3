@@ -1,4 +1,4 @@
-class queue:
+class Queue:
     """
     a simple implementation of a queue data structure using a list. The queue follows the First-In-First-Out (FIFO) principle, where elements are added to the end of the queue and removed from the front. The class provides methods for enqueueing, dequeueing, checking if the queue is empty, and getting the size of the queue.
      - enqueue(item): Add an item to the end of the queue.
