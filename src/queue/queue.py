@@ -5,6 +5,9 @@ class queue:
      - dequeue(): Remove and return the item from the front of the queue.
      - is_empty(): Check if the queue is empty.
      - size(): Get the number of items in the queue.
+     - clear(): Remove all items from the queue.
+     - peek(): Return the item at the front of the queue without removing it.
+    
     """
     def __init__(self):
         self.queue = []
