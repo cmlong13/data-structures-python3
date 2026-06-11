@@ -1,9 +1,36 @@
 class Node:
+    """
+    A node in a singly linked list.
+
+    """
     def __init__(self, value):
         self.value = value
         self.next = None
 
 class LinkedList:
+    """
+    A singly linked list.
+
+    Attributes:        
+        head: The first node in the list.
+        size: The number of nodes in the list
+    
+    Methods:
+        is_empty(): Returns True if the list is empty, False otherwise.
+        size(): Returns the number of nodes in the list.
+        append(value): Adds a new node with the given value to the end of the list.
+        prepend(value): Adds a new node with the given value to the beginning of the list.
+        insert(index, value): Inserts a new node with the given value at the specified index.
+        get(index): Returns the value of the node at the specified index.
+        find(value): Returns the index of the first node with the given value, or raises ValueError if not found.
+        set(index, value): Updates the value of the node at the specified index.
+        remove_at(index): Removes the node at the specified index.
+        remove(value): Removes the first node with the given value.
+        clear(): Removes all nodes from the list.
+        __str__(): Returns a string representation of the list.
+        to_list(): Returns a Python list containing all the values in the linked list.
+    
+    """
     def __init__(self):
         self.head = None
         self.size = 0
@@ -106,3 +133,24 @@ class LinkedList:
             previous = current
             current = current.next
         raise ValueError("Value not found in the list")
+    
+    def clear(self):
+        self.head = None
+        self.size = 0
+    
+    def __str__(self):
+        values = []
+        current = self.head
+        while current:
+            values.append(str(current.value))
+            current = current.next
+        return " -> ".join(values)
+    
+    def to_list(self):
+        values = []
+        current = self.head
+        while current:
+            values.append(current.value)
+            current = current.next
+        return values
+    
