@@ -18,7 +18,7 @@ This min heap is implemented in Python using a list as the internal storage.
 File location:
 
 ```text
-src/Heaps/MinHeap
+src/Heaps/MinHeap.py
 ```
 
 The heap uses array indexes to represent parent and child relationships:
@@ -44,14 +44,9 @@ The heap uses array indexes to represent parent and child relationships:
 ## Example
 
 ```python
-from importlib.machinery import SourceFileLoader
+from src.Heaps.MinHeap import MinHeap
 
-heap_module = SourceFileLoader(
-    "min_heap_module",
-    "src/Heaps/MinHeap",
-).load_module()
-
-heap = heap_module.MinHeap()
+heap = MinHeap()
 
 heap.insert(30)
 heap.insert(10)

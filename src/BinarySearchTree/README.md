@@ -18,7 +18,7 @@ This binary search tree is implemented in Python using a `Node` class and a `BST
 File location:
 
 ```text
-src/BinarySearchTree/BST
+src/BinarySearchTree/BST.py
 ```
 
 ---
@@ -46,14 +46,9 @@ src/BinarySearchTree/BST
 ## Example
 
 ```python
-from importlib.machinery import SourceFileLoader
+from src.BinarySearchTree.BST import BST
 
-bst_module = SourceFileLoader(
-    "bst_module",
-    "src/BinarySearchTree/BST",
-).load_module()
-
-tree = bst_module.BST()
+tree = BST()
 
 tree.insert(50)
 tree.insert(30)

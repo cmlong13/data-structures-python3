@@ -1,7 +1,5 @@
 import sys
 import unittest
-from importlib.machinery import SourceFileLoader
-from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
 
 """
@@ -18,12 +16,7 @@ SRC_DIR = ROOT_DIR / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-MIN_HEAP_PATH = SRC_DIR / "Heaps" / "MinHeap"
-MIN_HEAP_LOADER = SourceFileLoader("min_heap_module", str(MIN_HEAP_PATH))
-MIN_HEAP_SPEC = spec_from_loader("min_heap_module", MIN_HEAP_LOADER)
-MIN_HEAP_MODULE = module_from_spec(MIN_HEAP_SPEC)
-MIN_HEAP_SPEC.loader.exec_module(MIN_HEAP_MODULE)
-MinHeap = MIN_HEAP_MODULE.MinHeap
+from Heaps.MinHeap import MinHeap
 
 
 class TestMinHeap(unittest.TestCase):

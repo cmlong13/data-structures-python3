@@ -1,7 +1,5 @@
 import sys
 import unittest
-from importlib.machinery import SourceFileLoader
-from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
 
 """
@@ -19,12 +17,7 @@ SRC_DIR = ROOT_DIR / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-BST_PATH = SRC_DIR / "BinarySearchTree" / "BST"
-BST_LOADER = SourceFileLoader("bst_module", str(BST_PATH))
-BST_SPEC = spec_from_loader("bst_module", BST_LOADER)
-BST_MODULE = module_from_spec(BST_SPEC)
-BST_SPEC.loader.exec_module(BST_MODULE)
-BST = BST_MODULE.BST
+from BinarySearchTree.BST import BST
 
 
 class TestBinarySearchTree(unittest.TestCase):
